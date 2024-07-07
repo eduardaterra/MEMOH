@@ -1,0 +1,87 @@
+@use "../../styles/mixins";
+@import "../../styles/variables";
+
+.header {
+  @include mixins.glassmorphism;
+  &--icon {
+    display: flex;
+    @include mixins.desktop-screen {
+      height: 55px;
+    }
+  }
+  &--container {
+    border-bottom: 1px solid #fff;
+    display: flex;
+    height: $header-height;
+    padding: 0.5rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  &--menu-mobile {
+    all: unset;
+    display: inline-flex;
+    padding: 0.5rem;
+    cursor: pointer;
+    background: transparent;
+    > {
+      height: 4rem;
+      width: 4rem;
+    }
+    @include mixins.desktop-screen {
+      display: none;
+    }
+  }
+
+  &--content {
+    padding: 0 1rem;
+    align-items: center;
+    display: inline-flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: $max-width;
+    width: 100%;
+  }
+
+  &--cta {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    .social-media {
+      display: inline-flex;
+      a {
+        display: flex;
+        padding: 0.5rem;
+        > * {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+    }
+    @include mixins.device-screen {
+      position: fixed;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.75rem;
+      width: 100%;
+      padding: 0.5rem 1rem;
+      left: 0;
+      align-items: center;
+      top: $header-height;
+      border-bottom: 1px solid $color-neutral-light;
+      @include mixins.glassmorphism;
+      @include mixins.keyframes;
+      &.opened {
+        animation: fade-in 300ms ease-in;
+      }
+
+      &.closed {
+        opacity: 0;
+        animation: fade-out 300ms ease-in;
+      }
+    }
+  }
+}
+

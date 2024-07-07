@@ -1,0 +1,50 @@
+@import "../../styles/variables";
+
+.button {
+  all: unset;
+  border-radius: $border-radius-small;
+  border: 2px solid $color-primary;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 400ms filter ease-in-out;
+
+  &.button-size {
+    &--small {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem;
+    }
+
+    &--default {
+      font-size: 1rem;
+      padding: 0.25rem 1rem;
+    }
+
+    &--large {
+      font-size: 1.5rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  &.button-variant {
+    &--primary {
+      background-color: $color-primary;
+      color: #000;
+    }
+    &--secondary {
+      background-color: #00000060;
+      color: #fff;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.1, 1.1);
+    transition: all 200ms ease-in-out;
+  }
+
+  &:active {
+    filter: brightness(1.5);
+  }
+}
+

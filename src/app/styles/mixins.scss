@@ -1,0 +1,56 @@
+@mixin desktop-screen {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin device-screen {
+  @media (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin glassmorphism {
+  &.glassmorphism {
+    &--light {
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+
+    &--regular {
+      background: rgba(0, 0, 0, 0.6);
+      box-shadow: 0 4px 30pxrgba (0, 0, 0, 0.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+  }
+}
+
+@mixin keyframes {
+  transition: opacity 300ms ease-in;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      visibility: hidden;
+    }
+    to {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @keyframes fade-out {
+    from {
+      visibility: visible;
+      opacity: 1;
+    }
+    to {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+}
+
