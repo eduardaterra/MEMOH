@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Titillium_Web } from "next/font/google";
+
+import Header from "./components/Header";
 import "./styles/globals.scss";
 
 const tillium = Titillium_Web({
@@ -27,7 +29,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={tillium.className}>{children}</body>
+      <body className={tillium.className}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,0 +1,35 @@
+{
+  "format": "page",
+  "id": "grupo_reflexivo",
+  "label": "grupo-reflexivo",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Desktop": {
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "cta": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "Mobile": {
+      "slices1": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "cta": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

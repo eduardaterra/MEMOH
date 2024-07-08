@@ -6,17 +6,20 @@ import { useState } from "react";
 
 export default function CTA() {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
+  const [hadInteraction, setHadInteraction] = useState(false);
 
   function toggleMenu() {
-    return setIsMenuOpened(!isMenuOpened);
+    setIsMenuOpened(!isMenuOpened);
+    setHadInteraction(true);
   }
+
   return (
     <>
       <MenuMobileButton onClick={toggleMenu} />
       <div
         className={`header--cta glassmorphism--regular ${
           isMenuOpened ? "opened" : "closed"
-        }`}
+        } ${hadInteraction ? "interacted" : ""}`}
       >
         <SocialMedia />
         <div className="subscribe">

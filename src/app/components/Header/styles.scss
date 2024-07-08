@@ -2,6 +2,7 @@
 @import "../../styles/variables";
 
 .header {
+  z-index: 99;
   @include mixins.glassmorphism;
   &--icon {
     display: flex;
@@ -60,6 +61,7 @@
         }
       }
     }
+
     @include mixins.device-screen {
       position: fixed;
       justify-content: center;
@@ -70,6 +72,7 @@
       left: 0;
       align-items: center;
       top: $header-height;
+      display: none;
       border-bottom: 1px solid $color-neutral-light;
       @include mixins.glassmorphism;
       @include mixins.keyframes;
@@ -80,6 +83,9 @@
       &.closed {
         opacity: 0;
         animation: fade-out 300ms ease-in;
+      }
+      &.interacted {
+        display: flex;
       }
     }
   }

@@ -9,7 +9,7 @@ export default function Header() {
     <div className="header header--container glassmorphism--regular">
       <div className="header--content">
         <div className="header--icon">
-          <Image src={logoSymbol} alt="memoh logo" />
+          <Image priority src={logoSymbol} alt="memoh logo" />
         </div>
         <CTA />
       </div>
