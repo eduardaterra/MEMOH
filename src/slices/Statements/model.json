@@ -1,0 +1,60 @@
+{
+  "id": "statement",
+  "type": "SharedSlice",
+  "name": "Statements",
+  "description": "Statement",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "statements": {
+          "type": "Group",
+          "config": {
+            "label": "Depoimentos",
+            "repeat": true,
+            "fields": {
+              "name": {
+                "type": "Text",
+                "config": {
+                  "label": "Nome",
+                  "placeholder": ""
+                }
+              },
+              "details": {
+                "type": "Text",
+                "config": {
+                  "label": "Detalhes",
+                  "placeholder": ""
+                }
+              },
+              "statement": {
+                "type": "Text",
+                "config": {
+                  "label": "Depoimento",
+                  "placeholder": ""
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Imagem",
+                  "constraint": {
+                    "width": 120,
+                    "height": 120
+                  },
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -11,6 +11,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "statement": {
+              "type": "SharedSlice"
+            },
+            "about": {
+              "type": "SharedSlice"
+            },
             "cta": {
               "type": "SharedSlice"
             }
@@ -24,6 +30,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "statement": {
+              "type": "SharedSlice"
+            },
+            "about": {
+              "type": "SharedSlice"
+            },
             "cta": {
               "type": "SharedSlice"
             }

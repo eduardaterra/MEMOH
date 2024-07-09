@@ -23,7 +23,7 @@ export default function CTA() {
       >
         <SocialMedia />
         <div className="subscribe">
-          <Button size="small">PARTICIPE</Button>
+          <Button size="default">PARTICIPE</Button>
         </div>
       </div>
     </>

@@ -21,18 +21,13 @@
     justify-content: center;
     width: 100%;
     height: 100dvh;
-    animation: fade-in 300ms ease-in;
-
-    @include mixins.keyframes;
   }
 
   &--content-container {
-    animation: slide-in 300ms ease-in;
     display: flex;
     justify-content: flex-end;
     max-width: 90%;
     margin: 0 auto;
-    @include mixins.keyframes;
   }
 
   &--text-container {
@@ -76,9 +71,7 @@
     &,
     * {
       width: 80vw;
-      animation: fade-in 300ms ease-in;
-      animation: slide-in 300ms ease-in;
-
+      animation: fade-in 500ms ease-in;
       @include mixins.keyframes;
     }
     position: absolute;

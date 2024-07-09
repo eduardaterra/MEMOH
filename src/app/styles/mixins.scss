@@ -20,7 +20,7 @@
     }
 
     &--regular {
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.8);
       box-shadow: 0 4px 30pxrgba (0, 0, 0, 0.6);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
@@ -29,13 +29,14 @@
 }
 
 @mixin keyframes {
-  transition: opacity 300ms ease-in;
-
   @keyframes slide-in {
-    from {
-      transform: translateY(1rem);
+    0% {
+      transform: translateY(2rem);
     }
-    to {
+    90% {
+      transform: translateY(-1rem);
+    }
+    100% {
       transform: translateY(0);
     }
   }

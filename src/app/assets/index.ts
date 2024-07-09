@@ -6,6 +6,8 @@ import spotify from "./spotify";
 import logoSymbol from "./logo-symbol.svg";
 import logoComplete from "./logo-complete.svg";
 import menu from "./menu.svg";
+import next from "./next.svg";
+import prev from "./prev.svg";
 
 export {
   instagram,
@@ -16,5 +18,7 @@ export {
   spotify,
   menu,
   logoComplete,
+  next,
+  prev,
 };
 
