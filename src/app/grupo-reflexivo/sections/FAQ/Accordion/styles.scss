@@ -1,0 +1,52 @@
+@use "../../../../styles/mixins.scss";
+@import "../../../../styles/variables.scss";
+
+.accordion {
+  &--container {
+    width: 100%;
+    border-bottom: 1px solid $color-neutral-light;
+    &:first-child {
+      .accordion--title {
+        padding: 0 0 1.5rem 0;
+      }
+    }
+  }
+  &--title {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 1.5rem 0;
+    gap: 1rem;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  &--toggle {
+    all: unset;
+    padding: 0 1rem;
+    transform: rotate(0deg);
+    transition: transform 300ms ease-in;
+    &.active {
+      transform: rotate(180deg);
+    }
+  }
+
+  &--content-container {
+    overflow-y: hidden;
+    transition: max-height 300ms ease-in;
+  }
+
+  &--content {
+    color: #c4c4c4;
+    padding: 0 1rem 1rem;
+  }
+  @include mixins.device-screen {
+    &--title {
+      font-size: 1.25rem;
+    }
+  }
+}
+

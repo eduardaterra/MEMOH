@@ -8,6 +8,7 @@ import logoComplete from "./logo-complete.svg";
 import menu from "./menu.svg";
 import next from "./next.svg";
 import prev from "./prev.svg";
+import arrow from "./arrow.svg";
 
 export {
   instagram,
@@ -20,5 +21,6 @@ export {
   logoComplete,
   next,
   prev,
+  arrow,
 };
 

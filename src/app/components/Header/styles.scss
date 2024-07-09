@@ -74,8 +74,11 @@
       top: $header-height;
       display: none;
       border-bottom: 1px solid $color-neutral-light;
-      @include mixins.glassmorphism;
+      background-color: $color-secondary;
       @include mixins.keyframes;
+      .subscribe {
+        display: none;
+      }
       &.opened {
         animation: fade-in 300ms ease-in;
       }

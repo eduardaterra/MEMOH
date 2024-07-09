@@ -17,7 +17,7 @@ export default function CTA() {
     <>
       <MenuMobileButton onClick={toggleMenu} />
       <div
-        className={`header--cta glassmorphism--regular ${
+        className={`header--cta ${
           isMenuOpened ? "opened" : "closed"
         } ${hadInteraction ? "interacted" : ""}`}
       >

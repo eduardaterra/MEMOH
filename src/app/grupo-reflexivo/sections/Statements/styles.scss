@@ -93,6 +93,9 @@
     }
   }
   @include mixins.device-screen {
+    &--container {
+      height: fit-content;
+    }
     padding: 0rem 1rem;
     &--title {
       font-size: 2rem;

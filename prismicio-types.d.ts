@@ -5,11 +5,13 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type GrupoReflexivoDocumentDataSlicesSlice =
+  | FaqSlice
   | StatementSlice
   | AboutSlice
   | CtaSlice;
 
 type GrupoReflexivoDocumentDataSlices1Slice =
+  | FaqSlice
   | StatementSlice
   | AboutSlice
   | CtaSlice;
@@ -220,6 +222,73 @@ type CtaSliceVariation = CtaSliceDefault | CtaSliceMobile;
 export type CtaSlice = prismic.SharedSlice<"cta", CtaSliceVariation>;
 
 /**
+ * Item in *Faq → Default → Primary → Questões*
+ */
+export interface FaqSliceDefaultPrimaryQuestionsItem {
+  /**
+   * Pergunta field in *Faq → Default → Primary → Questões*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.default.primary.questions[].question
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  question: prismic.KeyTextField;
+
+  /**
+   * Resposta field in *Faq → Default → Primary → Questões*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.default.primary.questions[].answer
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  answer: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Faq → Default → Primary*
+ */
+export interface FaqSliceDefaultPrimary {
+  /**
+   * Questões field in *Faq → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.default.primary.questions[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  questions: prismic.GroupField<Simplify<FaqSliceDefaultPrimaryQuestionsItem>>;
+}
+
+/**
+ * Default variation for Faq Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FaqSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FaqSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Faq*
+ */
+type FaqSliceVariation = FaqSliceDefault;
+
+/**
+ * Faq Shared Slice
+ *
+ * - **API ID**: `faq`
+ * - **Description**: Faq
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FaqSlice = prismic.SharedSlice<"faq", FaqSliceVariation>;
+
+/**
  * Item in *Statements → Default → Primary → Depoimentos*
  */
 export interface StatementSliceDefaultPrimaryStatementsItem {
@@ -336,6 +405,11 @@ declare module "@prismicio/client" {
       CtaSliceVariation,
       CtaSliceDefault,
       CtaSliceMobile,
+      FaqSlice,
+      FaqSliceDefaultPrimaryQuestionsItem,
+      FaqSliceDefaultPrimary,
+      FaqSliceVariation,
+      FaqSliceDefault,
       StatementSlice,
       StatementSliceDefaultPrimaryStatementsItem,
       StatementSliceDefaultPrimary,
