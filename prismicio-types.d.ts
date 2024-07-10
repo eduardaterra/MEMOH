@@ -5,12 +5,14 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type GrupoReflexivoDocumentDataSlicesSlice =
+  | StepsSlice
   | FaqSlice
   | StatementSlice
   | AboutSlice
   | CtaSlice;
 
 type GrupoReflexivoDocumentDataSlices1Slice =
+  | StepsSlice
   | FaqSlice
   | StatementSlice
   | AboutSlice
@@ -380,6 +382,73 @@ export type StatementSlice = prismic.SharedSlice<
   StatementSliceVariation
 >;
 
+/**
+ * Item in *Steps → Default → Primary → Etapas*
+ */
+export interface StepsSliceDefaultPrimaryStepsItem {
+  /**
+   * Título field in *Steps → Default → Primary → Etapas*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: steps.default.primary.steps[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Descrição field in *Steps → Default → Primary → Etapas*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: steps.default.primary.steps[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Steps → Default → Primary*
+ */
+export interface StepsSliceDefaultPrimary {
+  /**
+   * Etapas field in *Steps → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: steps.default.primary.steps[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  steps: prismic.GroupField<Simplify<StepsSliceDefaultPrimaryStepsItem>>;
+}
+
+/**
+ * Default variation for Steps Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type StepsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<StepsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Steps*
+ */
+type StepsSliceVariation = StepsSliceDefault;
+
+/**
+ * Steps Shared Slice
+ *
+ * - **API ID**: `steps`
+ * - **Description**: Steps
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type StepsSlice = prismic.SharedSlice<"steps", StepsSliceVariation>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -415,6 +484,11 @@ declare module "@prismicio/client" {
       StatementSliceDefaultPrimary,
       StatementSliceVariation,
       StatementSliceDefault,
+      StepsSlice,
+      StepsSliceDefaultPrimaryStepsItem,
+      StepsSliceDefaultPrimary,
+      StepsSliceVariation,
+      StepsSliceDefault,
     };
   }
 }

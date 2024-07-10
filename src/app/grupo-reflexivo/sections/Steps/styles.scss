@@ -1,0 +1,61 @@
+@use "../../../styles/mixins.scss";
+@import "../../../styles/variables.scss";
+
+.steps {
+  &--container {
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 4rem 0 6rem 0;
+    gap: 3rem;
+    background-image: url(../../../assets/green-drop.png);
+    background-position: left bottom;
+    background-repeat: no-repeat;
+  }
+  &--content {
+    background-color: $color-secondary;
+    height: fit-content;
+    max-width: $max-width;
+    margin: 0 auto;
+    border: 1px solid $color-neutral-light;
+    border-radius: $border-radius-large;
+    padding: 2rem 2rem 3rem 2rem;
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    h3 {
+      font-size: 2rem;
+    }
+  }
+  &--items-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    color: #c7c7c7;
+    em {
+      font-weight: 700;
+      font-style: normal;
+      color: $color-primary;
+    }
+    strong {
+      font-weight: 700;
+      color: #fff;
+    }
+  }
+
+  @include mixins.device-screen {
+    &--container {
+      padding: 4rem 1rem;
+    }
+    &--content {
+      padding: 2rem;
+    }
+    &--items-container {
+      flex-direction: column;
+    }
+  }
+}
+

@@ -1,4 +1,4 @@
-@use "../../../styles//mixins.scss";
+@use "../../../styles/mixins.scss";
 @import "../../../styles/variables.scss";
 
 .statements {
@@ -6,9 +6,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100dvh;
     background-color: #000;
-    background-image: url("../../../assets/green-drop.png");
   }
 
   &--content {
@@ -57,6 +55,7 @@
     border: 1px solid $color-neutral-light;
     border-radius: $border-radius-large;
     max-width: 600px;
+    height: 100%;
     padding: 1rem;
     gap: 2rem;
   }

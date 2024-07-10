@@ -7,4 +7,5 @@ export const components = {
   cta: dynamic(() => import("./Cta")),
   faq: dynamic(() => import("./Faq")),
   statement: dynamic(() => import("./Statements")),
+  steps: dynamic(() => import("./Steps")),
 };
