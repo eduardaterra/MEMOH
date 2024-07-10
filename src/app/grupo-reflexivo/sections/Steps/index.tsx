@@ -1,6 +1,8 @@
+"use client";
 import { StepsProps } from "@/slices/Steps";
-import "./styles.scss";
 import Button from "@/app/components/Button";
+import { sendGTMEvent } from "@next/third-parties/google";
+import "./styles.scss";
 
 export default function Steps({ slice }: StepsProps) {
   return (
@@ -21,7 +23,17 @@ export default function Steps({ slice }: StepsProps) {
           ))}
         </div>
       </div>
-      <Button size="large">PARTICIPE</Button>
+      <Button
+        onClick={() =>
+          sendGTMEvent({
+            event: "subscribeClick",
+            value: { location: "steps" },
+          })
+        }
+        size="large"
+      >
+        PARTICIPE
+      </Button>
     </section>
   );
 }

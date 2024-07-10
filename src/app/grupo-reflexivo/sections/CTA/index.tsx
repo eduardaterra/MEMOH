@@ -1,3 +1,4 @@
+"use client";
 import { CtaProps } from "@/slices/Cta";
 import "./styles.scss";
 import Image from "next/image";
@@ -5,6 +6,7 @@ import { asImageSrc } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
 import Button from "@/app/components/Button";
 import { logoComplete } from "@/app/assets";
+import { sendGTMEvent } from "@next/third-parties/google";
 
 export default function CTA({ slice }: CtaProps) {
   return (
@@ -30,7 +32,16 @@ export default function CTA({ slice }: CtaProps) {
             </div>
             <div className="cta--buttons">
               <Button variant="secondary">SAIBA MAIS</Button>
-              <Button>PARTICIPE</Button>
+              <Button
+                onClick={() =>
+                  sendGTMEvent({
+                    event: "subscribeClick",
+                    value: { location: "CTA" },
+                  })
+                }
+              >
+                PARTICIPE
+              </Button>
             </div>
           </div>
         </div>
