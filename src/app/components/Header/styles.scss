@@ -41,7 +41,6 @@
     display: inline-flex;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: $max-width;
     width: 100%;
   }
 
@@ -80,15 +79,11 @@
         display: none;
       }
       &.opened {
-        animation: fade-in 300ms ease-in;
+        display: flex;
       }
 
       &.closed {
-        opacity: 0;
-        animation: fade-out 300ms ease-in;
-      }
-      &.interacted {
-        display: flex;
+        display: none;
       }
     }
   }

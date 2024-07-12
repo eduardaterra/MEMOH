@@ -1,4 +1,4 @@
-import FAQ from "@/app/grupo-reflexivo/sections/FAQ";
+import FAQ from "@/app/grupo-reflexivo-2024/sections/FAQ";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 

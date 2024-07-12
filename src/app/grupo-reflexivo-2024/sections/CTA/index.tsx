@@ -1,12 +1,12 @@
 "use client";
 import { CtaProps } from "@/slices/Cta";
-import "./styles.scss";
 import Image from "next/image";
 import { asImageSrc } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
 import Button from "@/app/components/Button";
 import { logoComplete } from "@/app/assets";
 import { sendGTMEvent } from "@next/third-parties/google";
+import "./styles.scss";
 
 export default function CTA({ slice }: CtaProps) {
   return (
@@ -27,7 +27,7 @@ export default function CTA({ slice }: CtaProps) {
             <div className="title">
               <h3>{slice.primary.title}</h3>
             </div>
-            <div className="description glassmorphism--regular">
+            <div className="description glassmorphism--medium">
               <PrismicRichText field={slice.primary.description} />
             </div>
             <div className="cta--buttons">

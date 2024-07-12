@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Titillium_Web } from "next/font/google";
 
 import Header from "./components/Header";
-import "./styles/globals.scss";
 import { GoogleTagManager } from "@next/third-parties/google";
+import "./styles/globals.scss";
 
 const tillium = Titillium_Web({
   subsets: ["latin"],

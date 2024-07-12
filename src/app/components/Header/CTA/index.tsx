@@ -1,9 +1,9 @@
 "use client";
-import Button from "../../Button";
-import SocialMedia from "./SocialMedia";
-import MenuMobileButton from "./MenuMobileButton";
 import { useState } from "react";
 import { sendGTMEvent } from "@next/third-parties/google";
+import MenuMobileButton from "./MenuMobileButton";
+import SocialMedia from "./SocialMedia";
+import Button from "../../Button";
 
 export default function CTA() {
   const [isMenuOpened, setIsMenuOpened] = useState(false);

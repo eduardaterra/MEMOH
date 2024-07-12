@@ -4,6 +4,7 @@
 .steps {
   &--container {
     width: 100%;
+    min-height: 100dvh;
     background-color: #000;
     display: flex;
     align-items: center;
@@ -26,32 +27,58 @@
     gap: 2rem;
     display: flex;
     flex-direction: column;
-    h3 {
-      font-size: 2rem;
+    align-items: center;
+
+    p {
+      font-size: 1.25rem;
     }
   }
-  &--items-container {
+
+  &--title-container {
     display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    color: #c7c7c7;
-    em {
-      font-weight: 700;
-      font-style: normal;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    h3 {
+      font-size: 3rem;
       color: $color-primary;
-    }
-    strong {
       font-weight: 700;
-      color: #fff;
+    }
+    h4 {
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+  }
+
+  &--text-container {
+    p {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      &:last-child {
+        margin: 0;
+      }
     }
   }
 
   @include mixins.device-screen {
     &--container {
+      background-position: 50% 0;
       padding: 4rem 1rem;
+      p {
+        font-size: 1rem;
+      }
+    }
+    &--title-container {
+      gap: 1rem;
+      h3 {
+        font-size: 2rem;
+      }
+      h4 {
+        font-size: 1.25rem;
+      }
     }
     &--content {
-      padding: 2rem;
+      padding: 2rem 1rem;
     }
     &--items-container {
       flex-direction: column;

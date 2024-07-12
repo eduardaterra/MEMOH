@@ -1,4 +1,4 @@
-import Statements from "@/app/grupo-reflexivo/sections/Statements";
+import Statements from "@/app/grupo-reflexivo-2024/sections/Statements";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 

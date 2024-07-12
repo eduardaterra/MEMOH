@@ -1,7 +1,7 @@
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
-import "./styles.scss";
 import { SliceZone } from "@prismicio/react";
+import "./styles.scss";
 
 export default async function GrupoReflexivoPage() {
   const client = createClient();
