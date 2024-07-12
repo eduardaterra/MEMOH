@@ -5,7 +5,9 @@
   &--container {
     display: flex;
     flex-direction: column;
+    gap: 4rem;
     width: 100%;
+    padding: 3rem 0;
     background-color: #000;
   }
 
@@ -16,7 +18,6 @@
     max-width: $max-width;
     width: 100%;
     margin: 0 auto;
-    padding: calc($header-height + 2rem) 0;
     gap: 2rem;
   }
 
@@ -38,6 +39,10 @@
     gap: 3rem;
     display: inline-flex;
     justify-content: center;
+    align-items: center;
+    span {
+      font-size: 1rem;
+    }
     padding: 2rem 1rem;
   }
 
@@ -94,13 +99,11 @@
   @include mixins.device-screen {
     &--container {
       height: fit-content;
+      padding: 2rem 0;
     }
     padding: 0rem 1rem;
     &--title {
       font-size: 2rem;
-    }
-    &--content {
-      padding: calc($header-height + 2rem) 0 3rem 0;
     }
 
     &--item-container {

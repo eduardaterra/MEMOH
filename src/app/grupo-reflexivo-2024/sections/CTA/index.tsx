@@ -40,7 +40,7 @@ export default function CTA({ slice }: CtaProps) {
                   })
                 }
               >
-                PARTICIPE
+                INSCREVA-SE
               </Button>
             </div>
           </div>

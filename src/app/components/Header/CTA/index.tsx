@@ -33,7 +33,7 @@ export default function CTA() {
             }
             size="default"
           >
-            PARTICIPE
+            INSCREVA-SE
           </Button>
         </div>
       </div>

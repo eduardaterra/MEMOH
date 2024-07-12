@@ -10,8 +10,10 @@ import "./styles.scss";
 import { PrismicImage } from "@prismicio/react";
 import Image from "next/image";
 import { next, prev } from "@/app/assets";
+import { useState } from "react";
 
 export default function Statements({ slice }: StatementProps) {
+  const [current, setCurrent] = useState(1);
   return (
     <section id="statement" className="statements statements--container">
       <div className="statements--content">
@@ -24,6 +26,7 @@ export default function Statements({ slice }: StatementProps) {
       <div className="statements--carousel-container">
         <Swiper
           slidesPerView="auto"
+          onActiveIndexChange={(e) => setCurrent(e.activeIndex + 1)}
           centeredSlides
           spaceBetween={16}
           modules={[Navigation, Pagination]}
@@ -55,6 +58,9 @@ export default function Statements({ slice }: StatementProps) {
             <button className="image-swiper-button-prev">
               <Image src={prev} alt="voltar" />
             </button>
+            <span>
+              {current}/{slice.primary.statements.length}
+            </span>
             <button className="image-swiper-button-next">
               <Image src={next} alt="avançar" />
             </button>
