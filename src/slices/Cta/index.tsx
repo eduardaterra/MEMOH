@@ -1,4 +1,4 @@
-import CTA from "@/app/grupo-reflexivo/sections/CTA";
+import CTA from "@/app/grupo-reflexivo-2024/sections/CTA";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 

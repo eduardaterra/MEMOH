@@ -1,4 +1,4 @@
-import Steps from "@/app/grupo-reflexivo/sections/Steps";
+import Steps from "@/app/grupo-reflexivo-2024/sections/Steps";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 
