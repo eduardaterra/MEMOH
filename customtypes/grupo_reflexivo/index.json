@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "download": {
+              "type": "SharedSlice"
+            },
             "steps": {
               "type": "SharedSlice"
             },
@@ -36,6 +39,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "download": {
+              "type": "SharedSlice"
+            },
             "steps": {
               "type": "SharedSlice"
             },

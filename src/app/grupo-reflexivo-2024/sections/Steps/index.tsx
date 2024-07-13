@@ -23,7 +23,7 @@ export default function Steps({ slice }: StepsProps) {
               value: { location: "steps" },
             })
           }
-          size="large"
+          size="default"
         >
           INSCREVA-SE
         </Button>

@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type GrupoReflexivoDocumentDataSlicesSlice =
+  | DownloadSlice
   | StepsSlice
   | FaqSlice
   | StatementSlice
@@ -12,6 +13,7 @@ type GrupoReflexivoDocumentDataSlicesSlice =
   | CtaSlice;
 
 type GrupoReflexivoDocumentDataSlices1Slice =
+  | DownloadSlice
   | StepsSlice
   | FaqSlice
   | StatementSlice
@@ -222,6 +224,61 @@ type CtaSliceVariation = CtaSliceDefault | CtaSliceMobile;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type CtaSlice = prismic.SharedSlice<"cta", CtaSliceVariation>;
+
+/**
+ * Primary content in *Download → Default → Primary*
+ */
+export interface DownloadSliceDefaultPrimary {
+  /**
+   * Título field in *Download → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: download.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Texto field in *Download → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: download.default.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Download Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DownloadSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<DownloadSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Download*
+ */
+type DownloadSliceVariation = DownloadSliceDefault;
+
+/**
+ * Download Shared Slice
+ *
+ * - **API ID**: `download`
+ * - **Description**: Download
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DownloadSlice = prismic.SharedSlice<
+  "download",
+  DownloadSliceVariation
+>;
 
 /**
  * Item in *Faq → Default → Primary → Questões*
@@ -469,6 +526,10 @@ declare module "@prismicio/client" {
       CtaSliceVariation,
       CtaSliceDefault,
       CtaSliceMobile,
+      DownloadSlice,
+      DownloadSliceDefaultPrimary,
+      DownloadSliceVariation,
+      DownloadSliceDefault,
       FaqSlice,
       FaqSliceDefaultPrimaryQuestionsItem,
       FaqSliceDefaultPrimary,

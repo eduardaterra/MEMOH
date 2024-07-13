@@ -99,7 +99,7 @@
   @include mixins.device-screen {
     &--container {
       height: fit-content;
-      padding: 2rem 0;
+      padding: 3rem 1rem;
     }
     padding: 0rem 1rem;
     &--title {
