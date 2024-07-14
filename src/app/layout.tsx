@@ -4,6 +4,7 @@ import { Titillium_Web } from "next/font/google";
 import Header from "./components/Header";
 import { GoogleTagManager } from "@next/third-parties/google";
 import "./styles/globals.scss";
+import Footer from "./components/Footer";
 
 const tillium = Titillium_Web({
   subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body className={tillium.className}>
         <Header />
         {children}
+        <Footer />
       </body>
       <GoogleTagManager gtmId="GTM-N86333WG" />
     </html>

@@ -9,6 +9,8 @@ import menu from "./menu.svg";
 import next from "./next.svg";
 import prev from "./prev.svg";
 import arrow from "./arrow.svg";
+import memohBlack from "./memoh-black";
+import spotifyBlack from "./spotify-black";
 
 export {
   instagram,
@@ -22,5 +24,7 @@ export {
   next,
   prev,
   arrow,
+  memohBlack,
+  spotifyBlack,
 };
 
