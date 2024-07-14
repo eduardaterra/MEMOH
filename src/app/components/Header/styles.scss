@@ -44,6 +44,11 @@
     width: 100%;
   }
 
+  .subscribe {
+    a {
+      all: unset;
+    }
+  }
   &--cta {
     display: flex;
     align-items: center;

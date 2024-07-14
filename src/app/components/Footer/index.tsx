@@ -7,25 +7,30 @@ import {
   whatsapp,
 } from "@/app/assets";
 import "./styles.scss";
-import { px } from "framer-motion";
 
 const institutionalLinks = [
-  { name: "Quem somos", link: "" },
-  { name: "Como atuamos", link: "" },
-  { name: "Dúvidas", link: "" },
-  { name: "Contato", link: "" },
-  { name: "Podcast", link: "" },
-  { name: "Grupos Reflexivos", link: "" },
-  { name: "Serviços exclusivos", link: "" },
-  { name: "Na mídia", link: "" },
+  { name: "Quem somos", link: "https://memoh.com.br/#proposito" },
+  { name: "Como atuamos", link: "https://memoh.com.br/#como-atuamos" },
+  { name: "Dúvidas", link: "https://memoh.com.br/#FAQ" },
+  { name: "Contato", link: "https://memoh.com.br/#contatos" },
+  { name: "Podcast", link: "https://memoh.com.br/#podcast" },
+  { name: "Grupos Reflexivos", link: "https://memoh.com.br/#como-atuamos" },
+  { name: "Serviços exclusivos", link: "https://memoh.com.br/#memoh-co" },
+  { name: "Na mídia", link: "https://memoh.com.br/#na-midia" },
 ];
 
 const socialMediasLinks = [
-  { icon: spotifyBlack, link: "" },
-  { icon: instagram, link: "" },
-  { icon: whatsapp, link: "" },
-  { icon: email, link: "" },
-  { icon: linkedin, link: "" },
+  {
+    icon: spotifyBlack,
+    link: "https://open.spotify.com/show/0IT6Qhu5mWrKc9mpeN3dyg?si=817e46805a2443db",
+  },
+  { icon: instagram, link: "https://www.instagram.com/projeto.memoh/" },
+  {
+    icon: whatsapp,
+    link: "https://api.whatsapp.com/send/?phone=5521971638030&text&type=phone_number&app_absent=0&utm_medium=email&_hsmi=233019099&_hsenc=p2ANqtz-9GFbNW_oVJ6SR2JFkOHaBLNgoSKBvh0IVJWAvjpUhZHAt92LhuFqcZFGvmLPTJWNE_oTeHdOH478KUgo8R6GRNuCCRHQ&utm_content=233019099&utm_source=hs_email",
+  },
+  { icon: email, link: "mailto:contato@memoh.com.br" },
+  { icon: linkedin, link: "https://www.linkedin.com/company/memoh/" },
 ];
 
 export default async function Footer() {

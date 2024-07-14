@@ -24,17 +24,22 @@ export default function CTA() {
       >
         <SocialMedia />
         <div className="subscribe">
-          <Button
-            onClick={() =>
-              sendGTMEvent({
-                event: "subscribeClick",
-                value: { location: "header" },
-              })
-            }
-            size="default"
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfNBQBGpe-ds51VhPdGul1CD50-DEpGzxLD8iWr-EGaXXMwAQ/viewform/"
+            target="_blank"
           >
-            INSCREVA-SE
-          </Button>
+            <Button
+              onClick={() =>
+                sendGTMEvent({
+                  event: "subscribeClick",
+                  value: { location: "header" },
+                })
+              }
+              size="default"
+            >
+              INSCREVA-SE
+            </Button>
+          </a>
         </div>
       </div>
     </>

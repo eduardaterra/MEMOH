@@ -10,7 +10,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 4rem 0 6rem 0;
+    padding: calc(4rem + $header-height) 0 6rem 0;
     gap: 3rem;
     background-image: url(../../../assets/green-drop.png);
     background-position: left bottom;
@@ -61,8 +61,9 @@
 
   @include mixins.device-screen {
     &--container {
+      min-height: fit-content;
       background-position: 50% 0;
-      padding: 4rem 1rem;
+      padding: calc(3rem + $header-height) 1rem 4rem 1rem;
       p {
         font-size: 1rem;
       }

@@ -1,5 +1,6 @@
 "use client";
 import { CtaProps } from "@/slices/Cta";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { asImageSrc } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
@@ -9,8 +10,16 @@ import { sendGTMEvent } from "@next/third-parties/google";
 import "./styles.scss";
 
 export default function CTA({ slice }: CtaProps) {
+  const elementRef = useRef<HTMLDivElement>(null);
+  const [height, setHeight] = useState<number>(0);
+
+  useEffect(() => {
+    if (elementRef.current) {
+      setHeight(elementRef.current.clientHeight);
+    }
+  }, []);
   return (
-    <section className="cta--container" id="cta">
+    <section ref={elementRef} className="cta--container" id="cta">
       <Image
         placeholder="blur"
         priority
@@ -31,17 +40,29 @@ export default function CTA({ slice }: CtaProps) {
               <PrismicRichText field={slice.primary.description} />
             </div>
             <div className="cta--buttons">
-              <Button variant="secondary">SAIBA MAIS</Button>
               <Button
-                onClick={() =>
-                  sendGTMEvent({
-                    event: "subscribeClick",
-                    value: { location: "CTA" },
-                  })
-                }
+                variant="secondary"
+                onClick={() => {
+                  window.scrollTo({ top: height, behavior: "smooth" });
+                }}
               >
-                INSCREVA-SE
+                SAIBA MAIS
               </Button>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfNBQBGpe-ds51VhPdGul1CD50-DEpGzxLD8iWr-EGaXXMwAQ/viewform/"
+                target="_blank"
+              >
+                <Button
+                  onClick={() =>
+                    sendGTMEvent({
+                      event: "subscribeClick",
+                      value: { location: "CTA" },
+                    })
+                  }
+                >
+                  INSCREVA-SE
+                </Button>
+              </a>
             </div>
           </div>
         </div>
