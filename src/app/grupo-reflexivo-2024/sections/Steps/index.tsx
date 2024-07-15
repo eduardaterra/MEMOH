@@ -4,11 +4,23 @@ import { PrismicRichText } from "@prismicio/react";
 import { StepsProps } from "@/slices/Inscricoes";
 import Button from "@/app/components/Button";
 import "./styles.scss";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 export default function Steps({ slice }: StepsProps) {
+  const elementRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(elementRef, { once: true });
   return (
     <section className="steps steps--container">
-      <div className="steps--content">
+      <div
+        ref={elementRef}
+        style={{
+          transform: isInView ? "none" : "translateY(200px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
+        }}
+        className="steps--content"
+      >
         <div className="steps--title-container">
           <h3>{slice.primary.title}</h3>
           <h4>{slice.primary.subtitle}</h4>
