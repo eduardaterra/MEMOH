@@ -31,10 +31,10 @@ export default function About({ slice }: AboutProps) {
           </div>
           <div className="spotify">
             <iframe
-              src="https://open.spotify.com/embed/playlist/2TlTfbQsJYf3vkBcON1mpB?utm_source=generator&theme=0"
-              width="100%"
               style={{ border: "none" }}
-              height="352"
+              src="https://open.spotify.com/embed/episode/5t5hmiQxO4xjGowpPIj2h2?utm_source=generator&theme=0"
+              width="100%"
+              height="152"
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="eager"
             ></iframe>

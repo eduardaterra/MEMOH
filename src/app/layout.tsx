@@ -20,6 +20,9 @@ export const metadata: Metadata = {
       url: "https://www.linkedin.com/in/pedroschneider",
     },
   ],
+  icons: {
+    icon: "/assets/icon.svg",
+  },
   description:
     "Essa é uma convocação pra você, homem incomodado que quer refletir e agir sobre questões de gênero. Os nossos grupos são espaços seguros onde podemos discutir e questionar as masculinidades, onde ele nos trouxe e pra qual lugar não queremos que ela nos leve enquanto sociedade.",
 };
