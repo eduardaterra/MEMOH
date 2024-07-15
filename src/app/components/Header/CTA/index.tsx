@@ -24,10 +24,7 @@ export default function CTA() {
       >
         <SocialMedia />
         <div className="subscribe">
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfNBQBGpe-ds51VhPdGul1CD50-DEpGzxLD8iWr-EGaXXMwAQ/viewform/"
-            target="_blank"
-          >
+          <a href="https://forms.gle/JQSaKwdsQsyZoUHt7" target="_blank">
             <Button
               onClick={() =>
                 sendGTMEvent({

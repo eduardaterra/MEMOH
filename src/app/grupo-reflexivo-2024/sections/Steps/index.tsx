@@ -28,17 +28,19 @@ export default function Steps({ slice }: StepsProps) {
         <div className="steps--text-container">
           <PrismicRichText field={slice.primary.text} />
         </div>
-        <Button
-          onClick={() =>
-            sendGTMEvent({
-              event: "subscribeClick",
-              value: { location: "steps" },
-            })
-          }
-          size="default"
-        >
-          INSCREVA-SE
-        </Button>
+        <a href="https://forms.gle/JQSaKwdsQsyZoUHt7" target="_blank">
+          <Button
+            onClick={() =>
+              sendGTMEvent({
+                event: "subscribeClick",
+                value: { location: "steps" },
+              })
+            }
+            size="default"
+          >
+            INSCREVA-SE
+          </Button>
+        </a>
       </div>
     </section>
   );
