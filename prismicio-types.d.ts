@@ -297,12 +297,12 @@ export interface FaqSliceDefaultPrimaryQuestionsItem {
   /**
    * Resposta field in *Faq → Default → Primary → Questões*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: faq.default.primary.questions[].answer
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  answer: prismic.KeyTextField;
+  answer: prismic.RichTextField;
 }
 
 /**

@@ -5,13 +5,15 @@ import { useCallback, useRef, useState } from "react";
 import "./styles.scss";
 import Image from "next/image";
 import { arrow } from "@/app/assets";
+import { RichTextField } from "@prismicio/client";
+import { PrismicRichText } from "@prismicio/react";
 
 export default function Accordion({
   title,
   content,
 }: {
   title: string;
-  content: string;
+  content: RichTextField;
 }) {
   const [active, setActive] = useState(false);
   const [height, setHeight] = useState("0");
@@ -38,7 +40,9 @@ export default function Accordion({
         ref={contentSpace}
         style={{ maxHeight: height }}
       >
-        <div className="accordion--content">{content}</div>
+        <div className="accordion--content">
+          <PrismicRichText field={content} />
+        </div>
       </div>
     </div>
   );

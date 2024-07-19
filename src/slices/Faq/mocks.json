@@ -20,9 +20,15 @@
 							[
 								"answer",
 								{
-									"__TYPE__": "FieldContent",
-									"value": "equally",
-									"type": "Text"
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Est est cupidatat culpa id deserunt excepteur est ea incididunt. Non eiusmod in ut dolore velit proident ad nulla dolore occaecat excepteur id qui quis aliquip. Minim do fugiat ullamco sit est in ut ullamco."
+											}
+										}
+									]
 								}
 							]
 						]

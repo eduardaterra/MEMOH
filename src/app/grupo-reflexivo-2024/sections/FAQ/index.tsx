@@ -14,7 +14,7 @@ export default function FAQ({ slice }: FaqProps) {
             <Accordion
               key={i}
               title={question.question as string}
-              content={question.answer as string}
+              content={question.answer}
             />
           ))}
         </div>
