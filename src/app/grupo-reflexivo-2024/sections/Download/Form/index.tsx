@@ -46,7 +46,7 @@ export default function DownloadForm() {
     undefined,
     () =>
       ({
-        canReceiveCommunication: false,
+        canReceiveCommunication: true,
         hasInterestOnCourse: false,
         email: null,
       }) as DownloadFormReducer
@@ -110,7 +110,7 @@ export default function DownloadForm() {
                     payload: !state.canReceiveCommunication,
                   })
                 }
-                label="Aceito receber novidades."
+                label="Quero receber novidades do MEMOH."
               />
             </div>
             <div className="form--buttons">
