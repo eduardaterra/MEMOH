@@ -140,7 +140,7 @@ export default function DownloadForm() {
           <a
             href="estudo-de-cuidado.pdf"
             download
-            onClick={() => sendGTMEvent("downloadMaterial")}
+            onClick={() => sendGTMEvent({ event: "downloadMaterial" })}
           >
             <Button variant="black">
               {" "}
