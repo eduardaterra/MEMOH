@@ -9,7 +9,10 @@
   text-align: center;
   text-transform: uppercase;
   transition: 400ms filter ease-in-out;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
   &.button-size {
     &--small {
       font-size: 0.75rem;
@@ -35,6 +38,21 @@
     &--secondary {
       background-color: #00000060;
       color: #fff;
+    }
+    &--black {
+      color: #000;
+      border: 1px solid #000;
+      &:hover {
+        transform: none;
+      }
+    }
+    &--full-black {
+      background-color: #000;
+      color: $color-primary;
+
+      &:hover {
+        transform: none;
+      }
     }
   }
 

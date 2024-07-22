@@ -54,7 +54,7 @@
 
   &--item-container {
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     flex-direction: column;
     background-color: $color-secondary;
     border: 1px solid $color-neutral-light;

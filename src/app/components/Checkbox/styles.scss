@@ -1,0 +1,40 @@
+@import "../../styles/variables.scss";
+
+.checkbox {
+  &--container {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  &--input {
+    all: unset;
+    display: flex;
+    margin: 3px;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border-radius-small;
+    border: 1px solid #000;
+    &,
+    svg {
+      width: 0.75rem;
+      height: 0.75rem;
+    }
+    svg {
+      visibility: hidden;
+    }
+    color: $color-neutral-dark;
+    background-color: transparent;
+    &.selected {
+      svg {
+        visibility: visible;
+      }
+    }
+  }
+  &--label {
+    width: 100%;
+    color: #000;
+    font-size: 0.75rem;
+  }
+}
+

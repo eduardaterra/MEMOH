@@ -3,9 +3,9 @@ import { sendGTMEvent } from "@next/third-parties/google";
 import { PrismicRichText } from "@prismicio/react";
 import { StepsProps } from "@/slices/Inscricoes";
 import Button from "@/app/components/Button";
-import "./styles.scss";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
+import "./styles.scss";
 
 export default function Steps({ slice }: StepsProps) {
   const elementRef = useRef<HTMLDivElement>(null);

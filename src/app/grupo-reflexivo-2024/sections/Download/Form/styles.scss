@@ -1,0 +1,62 @@
+@use "../../../../styles/mixins.scss";
+
+.form {
+  &--container {
+    min-width: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  &--title {
+    font-size: 2rem;
+    color: #000;
+  }
+  &--subtitle {
+    font-size: 1.25rem;
+    color: #000;
+    margin-bottom: 0.5rem;
+  }
+  &--inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 320px;
+    align-items: flex-start;
+  }
+
+  &--checkbox-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  &--buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  @include mixins.device-screen {
+    &--container {
+      min-width: unset;
+      width: 100%;
+      align-items: flex-start;
+    }
+    &--title {
+      font-size: 1.5rem;
+    }
+    &--subtitle {
+      font-size: 1rem;
+    }
+    &--inputs {
+      width: 100%;
+    }
+    &--buttons {
+      width: 100%;
+    }
+  }
+}
+

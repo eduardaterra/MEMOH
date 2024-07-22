@@ -11,6 +11,8 @@ import prev from "./prev.svg";
 import arrow from "./arrow.svg";
 import memohBlack from "./memoh-black";
 import spotifyBlack from "./spotify-black";
+import check from "./check";
+import download from "./download";
 
 export {
   instagram,
@@ -26,5 +28,7 @@ export {
   arrow,
   memohBlack,
   spotifyBlack,
+  check,
+  download,
 };
 

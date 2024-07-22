@@ -1,15 +1,22 @@
 "use client";
 import { DownloadProps } from "@/slices/Download";
 import { PrismicRichText } from "@prismicio/react";
-import "./styles.scss";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useInView } from "framer-motion";
+import Modal from "@/app/components/Modal";
+import DownloadForm from "./Form";
+import "./styles.scss";
+import { sendGTMEvent } from "@next/third-parties/google";
 
 export default function Download({ slice }: DownloadProps) {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   const elementRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(elementRef, { once: true });
   return (
     <section id="download" className="download download--container">
+      <Modal isOpen={modalIsOpen} setIsOpen={setModalIsOpen}>
+        <DownloadForm />
+      </Modal>
       <div ref={elementRef} className="download--content">
         <div
           className="download--title-container"
@@ -32,7 +39,17 @@ export default function Download({ slice }: DownloadProps) {
           <div className="download--text-container">
             <PrismicRichText field={slice.primary.text} />
           </div>
-          <div className="download--comming-soon">EM BREVE</div>
+          <div
+            className="download--comming-soon"
+            onClick={() => {
+              sendGTMEvent({
+                event: "openDownloadModal",
+              });
+              setModalIsOpen(true);
+            }}
+          >
+            CLIQUE AQUI
+          </div>
         </div>
       </div>
     </section>
