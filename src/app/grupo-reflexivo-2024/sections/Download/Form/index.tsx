@@ -138,7 +138,7 @@ export default function DownloadForm() {
         <>
           <h3 className="form--title">Baixe o material aqui:</h3>
           <a
-            href="Guia Prático Grupos Reflexivos Para Homens - MEMOH.pdf"
+            href="guia-pratico-grupos-reflexivos-memoh.pdf"
             download
             onClick={() => sendGTMEvent({ event: "downloadMaterial" })}
           >

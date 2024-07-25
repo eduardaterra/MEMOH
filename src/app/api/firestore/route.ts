@@ -6,7 +6,7 @@ import path from "path";
 // Caminho para o arquivo JSON da chave da conta de serviço
 const serviceAccountPath = path.join(
   process.cwd(),
-  process.env.GCP_CREDENTIALS as string
+  "./config/google-cloud.json"
 );
 
 // Inicialize o Firestore
