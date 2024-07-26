@@ -26,6 +26,7 @@ export default function CTA() {
         <div className="subscribe">
           <a href="https://forms.gle/JQSaKwdsQsyZoUHt7" target="_blank">
             <Button
+              disabled
               onClick={() =>
                 sendGTMEvent({
                   event: "subscribeClick",
@@ -34,7 +35,7 @@ export default function CTA() {
               }
               size="default"
             >
-              INSCREVA-SE
+              INSCRIÇÕES ENCERRADAS
             </Button>
           </a>
         </div>

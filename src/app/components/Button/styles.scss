@@ -64,5 +64,18 @@
   &:active {
     filter: brightness(1.5);
   }
+  &:disabled {
+    &.button-variant {
+      &--primary {
+        background-color: #333333;
+        border-color: $color-neutral-light;
+        color: #fff;
+        cursor: default;
+        &:hover {
+          transform: none;
+        }
+      }
+    }
+  }
 }
 

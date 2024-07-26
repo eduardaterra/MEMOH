@@ -32,6 +32,8 @@
 
   &--text-container {
     display: flex;
+    flex-direction: column-reverse;
+    display: flex;
     flex-direction: column;
     align-items: center;
     text-align: start;
@@ -69,11 +71,14 @@
   }
 
   &--buttons {
-    display: inline-flex;
+    display: flex;
+    flex-direction: column-reverse;
     gap: 1.5rem;
     justify-content: center;
+    align-items: center;
     width: 100%;
   }
+
   &--image {
     opacity: 1;
     @include mixins.keyframes;
@@ -116,6 +121,7 @@
     }
 
     &--buttons {
+      flex-direction: row;
       justify-content: flex-end;
     }
 

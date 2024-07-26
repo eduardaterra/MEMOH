@@ -30,6 +30,7 @@ export default function Steps({ slice }: StepsProps) {
         </div>
         <a href="https://forms.gle/JQSaKwdsQsyZoUHt7" target="_blank">
           <Button
+            disabled
             onClick={() =>
               sendGTMEvent({
                 event: "subscribeClick",
@@ -38,7 +39,7 @@ export default function Steps({ slice }: StepsProps) {
             }
             size="default"
           >
-            INSCREVA-SE
+            INSCRIÇÕES ENCERRADAS
           </Button>
         </a>
       </div>
