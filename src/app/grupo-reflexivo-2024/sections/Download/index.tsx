@@ -39,7 +39,7 @@ export default function Download({ slice }: DownloadProps) {
           <div className="download--text-container">
             <PrismicRichText field={slice.primary.text} />
           </div>
-          <div
+          <button
             className="download--comming-soon"
             onClick={() => {
               sendGTMEvent({
@@ -49,7 +49,7 @@ export default function Download({ slice }: DownloadProps) {
             }}
           >
             CLIQUE AQUI
-          </div>
+          </button>
         </div>
       </div>
     </section>
