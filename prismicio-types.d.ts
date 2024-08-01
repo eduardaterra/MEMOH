@@ -4,6 +4,45 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type EstudoDeCuidadoDocumentDataSlicesSlice =
+  | WhoWeAreSlice
+  | PodcastSlice
+  | FormBlockSlice
+  | TextBlockSlice
+  | SecondaryCtaSlice;
+
+/**
+ * Content for Estudo de Cuidado documents
+ */
+interface EstudoDeCuidadoDocumentData {
+  /**
+   * Slice Zone field in *Estudo de Cuidado*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: estudo_de_cuidado.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<EstudoDeCuidadoDocumentDataSlicesSlice>;
+}
+
+/**
+ * Estudo de Cuidado document from Prismic
+ *
+ * - **API ID**: `estudo_de_cuidado`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type EstudoDeCuidadoDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<EstudoDeCuidadoDocumentData>,
+    "estudo_de_cuidado",
+    Lang
+  >;
+
 type GrupoReflexivoDocumentDataSlicesSlice =
   | DownloadSlice
   | StepsSlice
@@ -21,11 +60,11 @@ type GrupoReflexivoDocumentDataSlices1Slice =
   | CtaSlice;
 
 /**
- * Content for grupo-reflexivo documents
+ * Content for Grupo Reflexivo documents
  */
 interface GrupoReflexivoDocumentData {
   /**
-   * Slice Zone field in *grupo-reflexivo*
+   * Slice Zone field in *Grupo Reflexivo*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
@@ -34,7 +73,7 @@ interface GrupoReflexivoDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
   slices: prismic.SliceZone<GrupoReflexivoDocumentDataSlicesSlice> /**
-   * Slice Zone field in *grupo-reflexivo*
+   * Slice Zone field in *Grupo Reflexivo*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
@@ -46,7 +85,7 @@ interface GrupoReflexivoDocumentData {
 }
 
 /**
- * grupo-reflexivo document from Prismic
+ * Grupo Reflexivo document from Prismic
  *
  * - **API ID**: `grupo_reflexivo`
  * - **Repeatable**: `false`
@@ -61,7 +100,7 @@ export type GrupoReflexivoDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = GrupoReflexivoDocument;
+export type AllDocumentTypes = EstudoDeCuidadoDocument | GrupoReflexivoDocument;
 
 /**
  * Primary content in *About → Default → Primary*
@@ -348,6 +387,141 @@ type FaqSliceVariation = FaqSliceDefault;
 export type FaqSlice = prismic.SharedSlice<"faq", FaqSliceVariation>;
 
 /**
+ * Default variation for FormBlock Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FormBlockSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *FormBlock*
+ */
+type FormBlockSliceVariation = FormBlockSliceDefault;
+
+/**
+ * FormBlock Shared Slice
+ *
+ * - **API ID**: `form_block`
+ * - **Description**: FormBlock
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FormBlockSlice = prismic.SharedSlice<
+  "form_block",
+  FormBlockSliceVariation
+>;
+
+/**
+ * Default variation for Podcast Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PodcastSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *Podcast*
+ */
+type PodcastSliceVariation = PodcastSliceDefault;
+
+/**
+ * Podcast Shared Slice
+ *
+ * - **API ID**: `podcast`
+ * - **Description**: Podcast
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PodcastSlice = prismic.SharedSlice<
+  "podcast",
+  PodcastSliceVariation
+>;
+
+/**
+ * Primary content in *SecondaryCta → Default → Primary*
+ */
+export interface SecondaryCtaSliceDefaultPrimary {
+  /**
+   * Título field in *SecondaryCta → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: secondary_cta.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Texto field in *SecondaryCta → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: secondary_cta.default.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * Imagem Principal field in *SecondaryCta → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: secondary_cta.default.primary.primaryImage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  primaryImage: prismic.ImageField<never>;
+
+  /**
+   * Imagem Secundária field in *SecondaryCta → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: secondary_cta.default.primary.secondaryImage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  secondaryImage: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for SecondaryCta Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SecondaryCtaSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SecondaryCtaSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *SecondaryCta*
+ */
+type SecondaryCtaSliceVariation = SecondaryCtaSliceDefault;
+
+/**
+ * SecondaryCta Shared Slice
+ *
+ * - **API ID**: `secondary_cta`
+ * - **Description**: SecondaryCta
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SecondaryCtaSlice = prismic.SharedSlice<
+  "secondary_cta",
+  SecondaryCtaSliceVariation
+>;
+
+/**
  * Item in *Statements → Default → Primary → Depoimentos*
  */
 export interface StatementSliceDefaultPrimaryStatementsItem {
@@ -501,6 +675,81 @@ type StepsSliceVariation = StepsSliceDefault;
  */
 export type StepsSlice = prismic.SharedSlice<"steps", StepsSliceVariation>;
 
+/**
+ * Primary content in *TextBlock → Default → Primary*
+ */
+export interface TextBlockSliceDefaultPrimary {
+  /**
+   * Text field in *TextBlock → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.default.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Default variation for TextBlock Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextBlockSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TextBlockSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TextBlock*
+ */
+type TextBlockSliceVariation = TextBlockSliceDefault;
+
+/**
+ * TextBlock Shared Slice
+ *
+ * - **API ID**: `text_block`
+ * - **Description**: TextBlock
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextBlockSlice = prismic.SharedSlice<
+  "text_block",
+  TextBlockSliceVariation
+>;
+
+/**
+ * Default variation for WhoWeAre Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WhoWeAreSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *WhoWeAre*
+ */
+type WhoWeAreSliceVariation = WhoWeAreSliceDefault;
+
+/**
+ * WhoWeAre Shared Slice
+ *
+ * - **API ID**: `who_we_are`
+ * - **Description**: WhoWeAre
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WhoWeAreSlice = prismic.SharedSlice<
+  "who_we_are",
+  WhoWeAreSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -511,6 +760,9 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      EstudoDeCuidadoDocument,
+      EstudoDeCuidadoDocumentData,
+      EstudoDeCuidadoDocumentDataSlicesSlice,
       GrupoReflexivoDocument,
       GrupoReflexivoDocumentData,
       GrupoReflexivoDocumentDataSlicesSlice,
@@ -535,6 +787,16 @@ declare module "@prismicio/client" {
       FaqSliceDefaultPrimary,
       FaqSliceVariation,
       FaqSliceDefault,
+      FormBlockSlice,
+      FormBlockSliceVariation,
+      FormBlockSliceDefault,
+      PodcastSlice,
+      PodcastSliceVariation,
+      PodcastSliceDefault,
+      SecondaryCtaSlice,
+      SecondaryCtaSliceDefaultPrimary,
+      SecondaryCtaSliceVariation,
+      SecondaryCtaSliceDefault,
       StatementSlice,
       StatementSliceDefaultPrimaryStatementsItem,
       StatementSliceDefaultPrimary,
@@ -544,6 +806,13 @@ declare module "@prismicio/client" {
       StepsSliceDefaultPrimary,
       StepsSliceVariation,
       StepsSliceDefault,
+      TextBlockSlice,
+      TextBlockSliceDefaultPrimary,
+      TextBlockSliceVariation,
+      TextBlockSliceDefault,
+      WhoWeAreSlice,
+      WhoWeAreSliceVariation,
+      WhoWeAreSliceDefault,
     };
   }
 }

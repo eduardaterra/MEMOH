@@ -1,0 +1,16 @@
+{
+  "id": "who_we_are",
+  "type": "SharedSlice",
+  "name": "WhoWeAre",
+  "description": "WhoWeAre",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}

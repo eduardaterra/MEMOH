@@ -1,0 +1,28 @@
+@use "../../app/styles/mixins.scss";
+@import "../../app/styles/variables.scss";
+
+.text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-weight: 700;
+  padding: 6rem 2.25rem;
+  text-align: start;
+  font-size: 2rem;
+  background-color: #000;
+  strong {
+    color: $color-primary;
+  }
+
+  em {
+    font-size: 1rem;
+  }
+
+  @include mixins.device-screen {
+    font-size: 1.5rem;
+    em {
+      font-size: 0.75rem;
+    }
+  }
+}
+

@@ -1,0 +1,16 @@
+{
+  "id": "podcast",
+  "type": "SharedSlice",
+  "name": "Podcast",
+  "description": "Podcast",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}

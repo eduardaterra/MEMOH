@@ -1,0 +1,8 @@
+@import "../styles/variables";
+.study {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: $color-neutral-dark;
+}
+

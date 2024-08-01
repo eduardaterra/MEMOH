@@ -1,0 +1,16 @@
+{
+  "id": "form_block",
+  "type": "SharedSlice",
+  "name": "FormBlock",
+  "description": "FormBlock",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}

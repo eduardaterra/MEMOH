@@ -13,6 +13,7 @@ import memohBlack from "./memoh-black";
 import spotifyBlack from "./spotify-black";
 import check from "./check";
 import download from "./download";
+import memohWhite from "./memoh-white";
 
 export {
   instagram,
@@ -30,5 +31,6 @@ export {
   spotifyBlack,
   check,
   download,
+  memohWhite,
 };
 

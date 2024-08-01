@@ -30,11 +30,27 @@
         visibility: visible;
       }
     }
+    &.inverse {
+      &,
+      * {
+        fill: #fff;
+        color: #fff;
+        border-color: #fff;
+      }
+    }
   }
   &--label {
     width: 100%;
     color: #000;
     font-size: 0.75rem;
+    &.inverse {
+      &,
+      * {
+        fill: #fff;
+        color: #fff;
+        border-color: #fff;
+      }
+    }
   }
 }
 
