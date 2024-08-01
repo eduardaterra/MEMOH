@@ -13,7 +13,7 @@ const tillium = Titillium_Web({
 });
 
 export const metadata: Metadata = {
-  title: "GRUPO REFLEXIVO",
+  title: "GRUPO REFLEXIVO | MEMOH",
   authors: [
     {
       name: "Pedro de Figueiredo",

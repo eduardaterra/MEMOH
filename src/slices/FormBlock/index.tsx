@@ -135,7 +135,7 @@ const FormBlock = (): JSX.Element => {
             <a
               href="guia-pratico-grupos-reflexivos-memoh.pdf"
               download
-              onClick={() => sendGTMEvent({ event: "downloadStudyMaterial" })}
+              onClick={() => sendGTMEvent({ event: "downloadStudy" })}
             >
               <Button variant="secondary" id="download">
                 <Download /> DOWNLOAD DO MATERIAL
