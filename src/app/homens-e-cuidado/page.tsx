@@ -5,7 +5,7 @@ import "./styles.scss";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "ESTUDOS DE HOMENS E CUIDADO | MEMOH",
+  title: "ESTUDO HOMENS E CUIDADO | MEMOH",
   authors: [
     {
       name: "Pedro de Figueiredo",

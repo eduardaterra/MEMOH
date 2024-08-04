@@ -115,18 +115,7 @@ const FormBlock = (): JSX.Element => {
                 variant="primary"
                 onClick={async () => onSubmit(state.email)}
               >
-                ENVIAR
-              </Button>
-              <Button
-                variant="secondary"
-                onClick={() => {
-                  sendGTMEvent({
-                    event: "downloadStudyWithoutEmail",
-                  });
-                  setCurrentScreen("download");
-                }}
-              >
-                CONTINUAR SEM ENVIAR
+                BAIXAR
               </Button>
             </div>
           </>

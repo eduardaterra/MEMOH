@@ -13,7 +13,7 @@ export type PodcastProps = SliceComponentProps<Content.PodcastSlice>;
 const Podcast = (): JSX.Element => {
   return (
     <section className="podcast">
-      <span>O Cuidado como Contra-ataque</span>
+      <span>Ouça nosso podcast sobre Homens e Cuidado</span>
       <div className="podcast--spotify">
         <iframe
           style={{ border: "none", borderRadius: "14px" }}

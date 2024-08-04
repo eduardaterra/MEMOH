@@ -23,22 +23,6 @@ export default function CTA() {
         } ${hadInteraction ? "interacted" : ""}`}
       >
         <SocialMedia />
-        <div className="subscribe">
-          <a href="https://forms.gle/JQSaKwdsQsyZoUHt7" target="_blank">
-            <Button
-              disabled
-              onClick={() =>
-                sendGTMEvent({
-                  event: "subscribeClick",
-                  value: { location: "header" },
-                })
-              }
-              size="default"
-            >
-              INSCRIÇÕES ENCERRADAS
-            </Button>
-          </a>
-        </div>
       </div>
     </>
   );
