@@ -6,6 +6,7 @@ import {
 } from "@prismicio/react";
 import "./styles.scss";
 import MemohWhite from "@/app/assets/memoh-white";
+import LogoSymbol from "@/app/assets/logo-symbol";
 /**
  * Props for `SecondaryCta`.
  */
@@ -39,7 +40,7 @@ const SecondaryCta = ({ slice }: SecondaryCtaProps): JSX.Element => {
           </div>
         </div>
         <div className="image">
-          <PrismicImage field={slice.primary.secondaryImage} />
+          <LogoSymbol />
         </div>
       </div>
     </section>

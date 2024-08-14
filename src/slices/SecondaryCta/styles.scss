@@ -101,7 +101,7 @@
       }
     }
     .image {
-      background-color: #b7b8b1;
+      background-color: #000;
       @include mixins.device-screen {
         display: none;
       }
@@ -111,6 +111,7 @@
       height: 100%;
       > {
         * {
+          padding: 5rem;
           width: 100% !important;
           height: 100% !important;
           object-fit: cover !important;
